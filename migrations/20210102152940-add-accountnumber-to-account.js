@@ -8,7 +8,7 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    return queryInterface.addColumn('Accounts', 'accountNumber', { type: DataTypes.STRING });
+    return queryInterface.addColumn('Accounts', 'accountNumber', { type: Sequelize.STRING });
 
   },
 

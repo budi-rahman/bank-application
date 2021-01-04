@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class ="container">
+  <h1>Movie List</h1>
+  <a href="/movies/add"><button type="button" class="btn btn-primary">Add Movie</button></a>
+  <br><br><br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th style="text-align:center">Identity Number</th>
+        <th style="text-align:center">Full Name</th>
+        <th style="text-align:center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.map(data => { %> 
+        <tr>
+          <td><%= data.IdentityNumber %> </td>
+          <td><%= data.fullName %> </td>
+          <td>
+            <a href="/accounts/<%= data.id %>/accounts"><button type="button" class="btn btn-info btn-sm">View Account</button></a> |
+            <a href="/customers/<%= data.id %>/editProfile"><button type="button" class="btn btn-info btn-sm">Edit Profile</button></a>
+          </td>
+        </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+  <a href="/accounts/register"><button type="button" class="btn btn-info btn-sm">Register</button></a> |
+  </div>
+</body>
+</html> 
